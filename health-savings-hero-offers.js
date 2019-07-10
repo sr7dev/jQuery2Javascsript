@@ -1,3 +1,11 @@
+/**
+ * javascript code for Health Saving Heros Offer Page.
+ * - Converting jQuery to JavaScript for Hero Page 
+ *
+ * @author Artem<artem@sobetechguru.com>
+ * @see https://gitlab.com/medicalrecords/medicalrecords-web/issues/100
+ * @since 1.4.0
+ */
 
 /**
  * Slider Script
