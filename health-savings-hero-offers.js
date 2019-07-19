@@ -78,7 +78,17 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 	checkDiviTab();
 });
 
-/*Tabs Script*/
+function add_scroll_class( target_selector, className ) {
+	var target_elements = document.querySelectorAll( target_selector );
+	for ( i = 0, nCount = target_elements.length; i < nCount; i ++ )
+			target_elements[ i ].classList.add( className );
+} 
+
+function remove_scroll_class( target_selector, className ) {
+	var target_elements = document.querySelectorAll( target_selector );
+	for ( i = 0, nCount = target_elements.length; i < nCount; i ++ )
+			target_elements[ i ].classList.remove( className );
+} 
 
 /*Mobile scrolling Script*/
 
@@ -91,62 +101,29 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			).scrollTop;
 
 		if ( st > lastScrollTop ) {
-			document
-				.querySelector( '.TopSection' ).classList
-				.add( 'hide' );
+			add_scroll_class( '.TopSection', 'hide' );
+			add_scroll_class( 'h2.et_pb_slide_title', 'top' );
+			add_scroll_class( '.et-pb-controllers', 'top-controllers' );
+			add_scroll_class( '.logo_container img#logo', 'non-text' );
 
-			document
-				.querySelector( 'h2.et_pb_slide_title' ).classList
-				.add( 'top' );
-
-			document
-				.querySelector( '.et-pb-controllers' ).classList
-				.add( 'top-controllers' );
-
-			document
-				.querySelector( '.logo_container img#logo' ).classList
-				.add( 'non-text' );
-			
 			document.body.classList
 				.add( 'hero-scrolling' );
 
 		} else {
-			document
-				.querySelector( '.TopSection' ).classList
-				.remove( 'hide' );
-
-			document
-				.querySelector( 'h2.et_pb_slide_title' ).classList
-				.remove( 'top' );
-
-			document
-				.querySelector( '.et-pb-controllers' ).classList
-				.remove( 'top-controllers' );
-
-			document
-				.querySelector( '.logo_container img#logo' ).classList
-				.remove( 'non-text' );
+			remove_scroll_class( '.TopSection', 'hide' );
+			remove_scroll_class( 'h2.et_pb_slide_title', 'top' );
+			remove_scroll_class( '.et-pb-controllers', 'top-controllers' );
+			remove_scroll_class( '.logo_container img#logo', 'non-text' );
 
 			document.body.classList
 				.remove( 'hero-scrolling' );
 		}  
 
 		if ( st === lastScrollTop ) {
-			document
-				.querySelector( '.TopSection' ).classList
-				.remove( 'hide' );
-
-			document
-				.querySelector( 'h2.et_pb_slide_title' ).classList
-				.remove( 'top' );
-
-			document
-				.querySelector( '.et-pb-controllers' ).classList
-				.remove( 'top-controllers' );
-
-			document
-				.querySelector( '.logo_container img#logo' ).classList
-				.remove( 'non-text' );
+			remove_scroll_class( '.TopSection', 'hide' );
+			remove_scroll_class( 'h2.et_pb_slide_title', 'top' );
+			remove_scroll_class( '.et-pb-controllers', 'top-controllers' );
+			remove_scroll_class( '.logo_container img#logo', 'non-text' );
 			
 			document.body.classList
 				.remove( 'hero-scrolling' );
