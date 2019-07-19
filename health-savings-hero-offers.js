@@ -78,13 +78,13 @@ document.addEventListener( 'DOMContentLoaded', function( event ) {
 	checkDiviTab();
 });
 
-function add_scroll_class( target_selector, className ) {
+function add_class( target_selector, className ) {
 	var target_elements = document.querySelectorAll( target_selector );
 	for ( i = 0, nCount = target_elements.length; i < nCount; i ++ )
 			target_elements[ i ].classList.add( className );
 } 
 
-function remove_scroll_class( target_selector, className ) {
+function remove_class( target_selector, className ) {
 	var target_elements = document.querySelectorAll( target_selector );
 	for ( i = 0, nCount = target_elements.length; i < nCount; i ++ )
 			target_elements[ i ].classList.remove( className );
@@ -101,29 +101,29 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			).scrollTop;
 
 		if ( st > lastScrollTop ) {
-			add_scroll_class( '.TopSection', 'hide' );
-			add_scroll_class( 'h2.et_pb_slide_title', 'top' );
-			add_scroll_class( '.et-pb-controllers', 'top-controllers' );
-			add_scroll_class( '.logo_container img#logo', 'non-text' );
+			add_class( '.TopSection', 'hide' );
+			add_class( 'h2.et_pb_slide_title', 'top' );
+			add_class( '.et-pb-controllers', 'top-controllers' );
+			add_class( '.logo_container img#logo', 'non-text' );
 
 			document.body.classList
 				.add( 'hero-scrolling' );
 
 		} else {
-			remove_scroll_class( '.TopSection', 'hide' );
-			remove_scroll_class( 'h2.et_pb_slide_title', 'top' );
-			remove_scroll_class( '.et-pb-controllers', 'top-controllers' );
-			remove_scroll_class( '.logo_container img#logo', 'non-text' );
+			remove_class( '.TopSection', 'hide' );
+			remove_class( 'h2.et_pb_slide_title', 'top' );
+			remove_class( '.et-pb-controllers', 'top-controllers' );
+			remove_class( '.logo_container img#logo', 'non-text' );
 
 			document.body.classList
 				.remove( 'hero-scrolling' );
 		}  
 
 		if ( st === lastScrollTop ) {
-			remove_scroll_class( '.TopSection', 'hide' );
-			remove_scroll_class( 'h2.et_pb_slide_title', 'top' );
-			remove_scroll_class( '.et-pb-controllers', 'top-controllers' );
-			remove_scroll_class( '.logo_container img#logo', 'non-text' );
+			remove_class( '.TopSection', 'hide' );
+			remove_class( 'h2.et_pb_slide_title', 'top' );
+			remove_class( '.et-pb-controllers', 'top-controllers' );
+			remove_class( '.logo_container img#logo', 'non-text' );
 			
 			document.body.classList
 				.remove( 'hero-scrolling' );
